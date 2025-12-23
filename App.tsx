@@ -1,20 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useFonts } from "expo-font";
+import { Colors } from "./src/theme";
+import { View, ActivityIndicator } from "react-native";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+  const fontsLoaded = useFonts({
+    "Inter-Regular": require("./src/assets/fonts/Inter/Inter_24pt-Regular.ttf"),
+    "Roboto-Medium": require("./src/assets/fonts/Roboto/Roboto_Condensed-Medium.ttf"),
+    "Roboto-Bold": require("./src/assets/fonts/Roboto/Roboto_Condensed-Bold.ttf"),
+  });
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  if (!fontsLoaded) {
+    return (
+      <View
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: Colors.background,
+        }}
+      >
+        <ActivityIndicator />
+      </View>
+    );
+  }
+  return null;
+}
