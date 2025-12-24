@@ -1,13 +1,23 @@
+import React, { ReactNode } from "react";
+
 export type AppFlow = "ONBOARDING" | "AUTH" | "APP";
 
-export type AuthState = {
+export type AuthContextData = {
   isAuthenticated: boolean;
-  hasSeenOnboarding: boolean;
-  token: string | null;
+  hasCompletedOnboarding: boolean;
+  isLoading: boolean;
+  signIn: () => Promise<void>;
+  signOut: () => Promise<void>;
+  completeOnboarding: () => Promise<void>;
 };
 
+export type AuthProviderProps = {
+    children: ReactNode;
+}
+
+
 export type AppStackParamList = {
-  Home: undefined;
-  Profile: undefined;
-  Workout: { workout: string };
-};
+    Home: undefined;
+    Profile: undefined;
+    Workout: { workout: string };
+}
