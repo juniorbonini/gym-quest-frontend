@@ -1,8 +1,10 @@
-import { useAuth } from "@/context/authContext"
-import { useRef, useState } from "react"
+import { useRef } from "react"
 import { FlatList, View, Text, ImageBackground, Dimensions, TouchableOpacity } from "react-native"
-import { onboardingData } from "./onboarding.data"
+
 import { styles } from "./style"
+import { useAuth } from "@/context/authContext"
+import { onboardingData } from "./onboarding.data"
+import { OnboardingDataProps } from "@/@types/types"
 
 const { width } = Dimensions.get('window')
 
@@ -10,10 +12,9 @@ export function OboardingScreen() {
   const flatlistRef = useRef<FlatList>(null);
   const { completeOnboarding } = useAuth();
 
-
   return (
     <View>
-      <FlatList
+      <FlatList<OnboardingDataProps>
        ref={flatlistRef}
        data={onboardingData}
        pagingEnabled

@@ -1,6 +1,7 @@
+import { OnboardingDataProps } from "@/@types/types";
 import { styles } from "./style";
 
-export const onboardingData = [
+export const onboardingData: OnboardingDataProps[] = [
   {
     id: "1",
     title: 'GYMQUEST',

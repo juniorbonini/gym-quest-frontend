@@ -1,46 +1,46 @@
 import { StyleSheet } from "react-native";
-import { Colors, FontFamily, Spacing } from "../../theme";
+import { color, fontFamily, spacing } from "@/theme";
 
 export const styles = StyleSheet.create({
   slide: {
     flex: 1,
   },    
   content: {
-    paddingHorizontal: Spacing.lg
+    paddingHorizontal: spacing.lg
   },
   title: {
-    fontFamily: FontFamily.RobotoBold,
+    fontFamily: fontFamily.RobotoBold,
     fontSize: 50,
-    color: Colors.textPrimary,
+    color: color.textPrimary,
     textAlign: 'center',
     marginBottom: '150%',
     paddingTop: 30
 
   },
   subtitle: {
-    fontFamily: FontFamily.RobotoMedium,
+    fontFamily: fontFamily.RobotoMedium,
     fontSize: 40,
-    color: Colors.textPrimary,
+    color: color.textPrimary,
     marginBottom: 15,
     textAlign: 'center'
   },
   description: {
-    fontFamily: FontFamily.InterRegular,
+    fontFamily: fontFamily.InterRegular,
     fontSize: 22,
-    color: Colors.textSecondary,
+    color: color.textSecondary,
     textAlign: 'center',
     marginBottom: 35
   },
   button: {
-    backgroundColor: Colors.strong,
+    backgroundColor: color.strong,
     padding: 12,
     borderRadius: 8,
     alignItems: "center",
   },
 
   buttonText: {
-    fontFamily: FontFamily.RobotoBold,
-    color: Colors.background,
+    fontFamily: fontFamily.RobotoBold,
+    color: color.background,
     fontSize: 22
   },
 });

@@ -26,3 +26,11 @@ export type OnboardingIndicatorProps = {
   total: number;
   currentIndex: number;
 }
+
+export type OnboardingDataProps = {
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  image: any;
+}

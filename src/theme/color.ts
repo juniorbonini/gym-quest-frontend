@@ -1,4 +1,4 @@
-export const Colors = {
+export const color = {
   primary: "#6C63FF", // Roxo principal
   secondary: "#8F8AFF", // Roxo claro
   background: "#0F0F1A", // Fundo escuro
