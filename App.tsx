@@ -3,7 +3,7 @@ import { useFonts } from "expo-font";
 
 import { Loading } from "./src/components/Loading";
 import { AuthProvider } from "./src/context/authContext";
-import RootNavigation from "./src/navigation/RootNavigation";
+import RootNavigation from "@/navigation/rootNavigation";
 
 export default function App() {
   const [fontsLoaded] = useFonts({

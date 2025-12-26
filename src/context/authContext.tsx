@@ -4,8 +4,10 @@ import {
   useEffect,
   useState,
 } from "react";
-import { AuthContextData, AuthProviderProps } from "../@types/types";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+
+
+import { AuthContextData, AuthProviderProps } from "@/@types/types";
 
 const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 
@@ -22,7 +24,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
         );
         const userToken = await AsyncStorage.getItem("@auth_token");
 
-        setHasCompletedOnboarding(onboardingCompleted === "true");
+        setHasCompletedOnboarding(onboardingCompleted === "false");
         setIsAuthenticated(!!userToken);
       } catch (error) {
         console.log(error, "Erro ao carregar dados persistidos");

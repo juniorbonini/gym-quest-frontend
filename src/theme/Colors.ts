@@ -8,4 +8,5 @@ export const Colors = {
   accent: "#4CAF50", // Sucesso / XP
   danger: "#FF5252",
   border: "#2A2A40",
+  strong: '#ed9650'
 };

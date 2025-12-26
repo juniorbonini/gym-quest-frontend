@@ -19,7 +19,7 @@ function LoginScreen() {
 
 export function AuthStack() {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Navigator  screenOptions={{ headerShown: false }}>
       <Stack.Screen name="login" component={LoginScreen} />
     </Stack.Navigator>
   );

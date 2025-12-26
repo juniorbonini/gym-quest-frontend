@@ -21,3 +21,8 @@ export type AppStackParamList = {
     Profile: undefined;
     Workout: { workout: string };
 }
+
+export type OnboardingIndicatorProps = {
+  total: number;
+  currentIndex: number;
+}
