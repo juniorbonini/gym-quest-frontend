@@ -1,9 +1,11 @@
+import { useAuth } from "@/context/authContext";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Text, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 
 const Stack = createNativeStackNavigator();
 
 function HomeScreen() {
+  const { signOut } = useAuth();
   return (
     <View
       style={{
@@ -13,6 +15,9 @@ function HomeScreen() {
       }}
     >
       <Text>HomeScreen</Text>
+      <TouchableOpacity onPress={signOut}>
+        <Text>Sair</Text>
+      </TouchableOpacity>
     </View>
   );
 }

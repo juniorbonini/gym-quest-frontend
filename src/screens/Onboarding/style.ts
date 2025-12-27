@@ -4,43 +4,37 @@ import { color, fontFamily, spacing } from "@/theme";
 export const styles = StyleSheet.create({
   slide: {
     flex: 1,
-  },    
+  },
   content: {
-    paddingHorizontal: spacing.lg
+    paddingHorizontal: spacing.lg,
+    gap: 10,
   },
   title: {
     fontFamily: fontFamily.RobotoBold,
     fontSize: 50,
-    color: color.textPrimary,
-    textAlign: 'center',
-    marginBottom: '150%',
-    paddingTop: 30
-
+    color: color.gray[100],
+    textAlign: "center",
+    marginBottom: "150%",
+    paddingTop: 30,
   },
   subtitle: {
     fontFamily: fontFamily.RobotoMedium,
     fontSize: 40,
-    color: color.textPrimary,
-    marginBottom: 15,
-    textAlign: 'center'
+    color: color.gray[300],
+    textAlign: "center",
   },
   description: {
     fontFamily: fontFamily.InterRegular,
     fontSize: 22,
-    color: color.textSecondary,
-    textAlign: 'center',
-    marginBottom: 35
+    color: color.gray[500],
+    textAlign: "center",
   },
   button: {
-    backgroundColor: color.strong,
-    padding: 12,
+    width: "100%",
+    alignItems: 'center',
+    justifyContent: 'center',
     borderRadius: 8,
-    alignItems: "center",
-  },
-
-  buttonText: {
-    fontFamily: fontFamily.RobotoBold,
-    color: color.background,
-    fontSize: 22
+    padding: 14,
+    backgroundColor: color.blue[500],
   },
 });

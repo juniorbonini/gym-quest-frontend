@@ -22,7 +22,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
         const onboardingCompleted = await AsyncStorage.getItem(
           "@onboarding_completed"
         );
-        const userToken = await AsyncStorage.getItem("@auth_token");
+        const userToken = await AsyncStorage.getItem("@token");
 
         setHasCompletedOnboarding(onboardingCompleted === "false");
         setIsAuthenticated(!!userToken);
@@ -37,12 +37,22 @@ export function AuthProvider({ children }: AuthProviderProps) {
   }, []);
 
   async function signIn() {
-    await AsyncStorage.setItem("@auth_token", "@token_mock");
+    // await new Promise(resolve => setTimeout(resolve, 800))
+
+    // const fakeToken = "token_fake"
+
+    await AsyncStorage.setItem("@token", "mock-token");
+
     setIsAuthenticated(true);
   }
 
+  async function handleRegister() {
+    await AsyncStorage.setItem('@token', 'mock-token')
+    setIsAuthenticated(true)
+  }
+
   async function signOut() {
-    await AsyncStorage.removeItem("@auth_token");
+    await AsyncStorage.removeItem("@token");
     setIsAuthenticated(false);
   }
 
@@ -58,6 +68,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
         hasCompletedOnboarding,
         isLoading,
         signIn,
+        handleRegister,
         signOut,
         completeOnboarding,
       }}
